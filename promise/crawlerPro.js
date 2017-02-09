@@ -37,8 +37,9 @@ function getCommentAsync(course,page){
 	return new Promise((resolve,reject)=>{
 
 		http.get(getOption(course,page),function(res){
-		// console.log('headers: '+JSON.stringify(res.headers));
+		console.log('headers: '+JSON.stringify(res.headers));
 			var html=[];
+
 			res.on('data',function(chunk){
 				html.push(chunk);
 			});
@@ -67,7 +68,7 @@ function getCommentAsync(course,page){
 
 var requestComment=(course,page)=>{
 	var request=http.request(getOption(course,page),function(res){
-		// console.log('headers: '+JSON.stringify(res.headers));
+		console.log('headers: '+JSON.stringify(res.headers));
 		var html=[];
 		res.on('data',function(chunk){
 			html.push(chunk);

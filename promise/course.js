@@ -1,7 +1,9 @@
 let http = require('http')
 let cheerio = require('cheerio')
 let baseUrl = 'http://www.imooc.com/learn/';
-let vids = [728, 637, 348, 259, 197, 134, 75]
+// let vids = [728, 637, 348, 259, 197, 134, 75]
+let vids = [728, 637]
+
 
 // 爬取有用的信息
 function filterCourse(ajaxData) {
@@ -85,6 +87,7 @@ function getpageAsync(url) {
                 headers,
             }
             http.get(options, (res) => {
+                console.log('headers: '+JSON.stringify(res.headers));
                 let rawData = '';
                 res.on('data', (chunk) => {
                     rawData += chunk;

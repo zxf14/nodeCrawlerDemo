@@ -103,6 +103,7 @@ var requestComment=(course,page)=>{
 	var request=http.request(getOption(course,page),function(res){
 		// console.log('headers: '+JSON.stringify(res.headers));
 		var html=[];
+
 		res.on('data',function(chunk){
 			html.push(chunk);
 			// console.log(Buffer.isBuffer(chunk));
