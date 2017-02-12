@@ -11,4 +11,6 @@
 	- 文件系统读写图片
 - /stream
 	- 简单利用fs读取文件，写文件，编码，pipe等
+- /proxy
+	- 反向代理，http-proxy
 

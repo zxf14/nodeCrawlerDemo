@@ -40,4 +40,11 @@ myEmitter.on('event', () => {
   console.log('11an event occurred!');
 });
 
+var callback = (stream) => {
+  console.log('someone connected!');
+};
+myEmitter.on('connection', callback);
+// ...
+myEmitter.removeListener('connection', callback);
+
 myEmitter.emit('event');
