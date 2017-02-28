@@ -18,6 +18,6 @@ var srvSocket = net.connect(srvUrl.port, srvUrl.hostname, () => {
   });
 
 var a2 = a1("abc",()=>{
-
+	a2()
 });
 a2(a1,"abc");

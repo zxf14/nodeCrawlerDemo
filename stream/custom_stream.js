@@ -35,6 +35,7 @@ util.inherits(TransformStream, stream.Transform);
 
 TransformStream.prototype._transform = function(chunk, encode, cb) {
     this.push(chunk);
+    // this.push('_transform!');
     cb();
 };
 

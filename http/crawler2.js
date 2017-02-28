@@ -24,7 +24,7 @@ http.get(url,res=>{
 	});
 	res.on('end',()=>{
 		var data=parseChapter(html);
-		console.log(data);
+		console.log(html);
 	})
 }).on('error',()=>{
 	console.log("error");

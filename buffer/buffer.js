@@ -1,23 +1,39 @@
 var fs = require('fs');
-
+var mkdirp = require('mkdirp');
 fs.readFile('logo.png', function(err, origin_buffer) {
-    console.log(Buffer.isBuffer(origin_buffer));
+    // console.log(Buffer.isBuffer(origin_buffer));
 
-    fs.writeFile('logo_buffer.png', origin_buffer, function(err) {
-        if (err) console.log(err);
-    });
+    // fs.writeFile('logo_buffer.png', origin_buffer, function(err) {
+    //     if (err) console.log(err);
+    // });
 
     var base64Image = origin_buffer.toString('base64');
 
-    console.log(base64Image);
+    // console.log(base64Image);
 
     var decodedImage = new Buffer(base64Image, 'base64');
 
-    console.log(Buffer.compare(origin_buffer, decodedImage));
+    // console.log(Buffer.compare(origin_buffer, decodedImage));
 
-    fs.writeFile('logo_decoded.png', decodedImage, function(err) {
-        if (err) console.log(err);
+    // fs.open('./img','a+',(err,fd)=>{
+    //     err&&console.log(err);
+    //     fs.writeFile('./img/logo_decod.png', origin_buffer, function(err) {
+    //         if (err) console.log(err);
+    //     });
+    // });
+
+    fs.readdir('./img',(err, files)=>{
+        console.log(err);
+        console.log(files);
     });
+
+    mkdirp('./img', function(err) {
+        console.log('make dir');
+        if(err){
+            console.log(err);
+        }
+    });
+    
 });
 
 // url(data:image/png;base64,64的码)
